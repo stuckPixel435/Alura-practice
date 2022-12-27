@@ -1,0 +1,31 @@
+<canvas width="600" height="400"></canvas>
+<script>
+    var fondo = document.querySelector("canvas");
+    var pincel = fondo.getContext("2d");
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400);  
+
+    function graficarCirculo(x, y, radio){
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarFondo(){
+        pincel.clearRect(0,0,600,400);
+    }
+
+    var x = 0;
+    function trasladarCirculo(){
+        limpiarFondo();
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,400); 
+        graficarCirculo(x,20,20);
+        x += 20;
+        
+    }
+
+    setInterval(trasladarCirculo,1000);
+    
+</script>
