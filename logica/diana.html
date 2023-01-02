@@ -1,0 +1,59 @@
+<canvas width="600" height="400"></canvas>
+<script>
+    var fondo = document.querySelector("canvas");
+    var pincel = fondo.getContext("2d");
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400);  
+
+    var radio = 10;
+    var xAleatorio;
+    var yAleatorio;
+
+    function graficarCirculo(x, y, radio,color){
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+    }
+
+    function limpiarFondo(){
+        pincel.clearRect(0,0,600,400);
+    }
+    function posicionAleatoria(numMax){
+        return Math.floor(Math.random() * numMax);
+    }
+
+    function graficarDiana(){
+        limpiarFondo();
+        pincel.fillStyle = "lightgrey";
+        pincel.fillRect(0,0,600,400); 
+
+        xAleatorio = posicionAleatoria(600);
+        yAleatorio = posicionAleatoria(400);
+
+        graficarCirculo(xAleatorio, yAleatorio, radio+20, "red");
+        graficarCirculo(xAleatorio, yAleatorio, radio+10, "white");  
+        graficarCirculo(xAleatorio, yAleatorio, radio, "red");    
+    }
+
+    function disparo(evento){
+
+        var x = evento.offsetX;
+        var y = evento.offsetY;
+        if((x < xAleatorio + radio) &&
+           (x > xAleatorio - radio) &&
+           (y < yAleatorio + radio) &&
+           (y > yAleatorio - radio)){
+            alert("Le diste");
+        }
+
+        console.log("X " + evento.offsetX);
+        console.log("Y " + evento.offsetY);
+    }
+
+    setInterval(graficarDiana, 1000);
+
+    fondo.onclick = disparo;
+
+    
+</script>
