@@ -1,0 +1,87 @@
+body{
+    background: #F3F5FC;
+}
+
+#logo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 40px;
+
+    position: absolute;
+    width: 120px;
+    height: 48px;
+    left: 40px;
+    top: 40px;
+}
+
+.texto{
+    position: absolute;
+    width: 577px;
+    height: 48px;
+    left: 240px;
+    top: 168px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    color: #0A3871;
+}
+
+.cuadrado{
+    position: absolute;
+    width: 400px;
+    height: 800px;
+    left: 1000px;
+    top: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+}
+
+#persona{
+    position: absolute;
+    top: 240px;
+    left: 25px;
+}
+
+.mensaje{
+    position: absolute;
+    left: 80px;
+    top: 520px;
+}
+
+.mensaje h2{
+    text-align: center;
+    color: #343A40;
+    height: 50px;
+    line-height: 120%;
+}
+
+.mensaje h3{
+    text-align: center;
+    font-size: 16px;
+    line-height: 120%;
+    color: #495057;
+}
+
+.botones{
+    position: absolute;
+    left: 240px;
+    top: 700px;
+}
+
+.botones img{
+    width: 16px;
+    height: 16px;
+}
+
+.botones p{
+    display: inline-block;
+    left: 20000px;
+    color: #495057;
+
+}
